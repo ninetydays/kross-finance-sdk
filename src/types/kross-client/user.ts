@@ -18,28 +18,6 @@ export type UserQueryDto = {
   include?: Record<string, unknown>;
 };
 
-export type UserUpdateDto = {
-  password?: string;
-  email?: string;
-  name?: string;
-  memberType?: string;
-  kftcType?: string;
-  state?: string;
-  nickName?: string;
-  mobile?: string;
-  zip?: string;
-  address1?: string;
-  address2?: string;
-  joinPath?: string;
-  retireAt?: string;
-  expireDate?: string;
-  fdsExcept?: boolean;
-  depositControl?: boolean;
-  notifyOnNewProducts?: boolean;
-  notifyOnRepayments?: boolean;
-  consentToCollectMarketingInfo?: boolean;
-};
-
 export type kftcBalanceResponseData = {
   rsp_code: string;
   rsp_message: string;
@@ -112,39 +90,5 @@ export type UserData = {
 };
 
 export type UserResponseData = UserData[];
-
-export type UserUpdateResponse = {
-  id: string;
-  createdAt: string;
-  updatedAt: string;
-  memberNo: string;
-  keyid: string;
-  password: string;
-  name: string;
-  memberType: string;
-  state: string;
-  nickName: string | null;
-  birthday: string;
-  ssn: string;
-  email: string;
-  mobile: string;
-  phoneVerified: boolean;
-  idCardVerified: boolean;
-  bankAccountVerified: boolean;
-  zip: string;
-  address1: string;
-  address2: string;
-  financialProvider: boolean;
-  joinPath: string | null;
-  data: KFTCData;
-  retireAt: string | null;
-  isCorp: boolean;
-  kftcType: string;
-  guid: string;
-  fdsExcept: boolean;
-  depositControl: boolean;
-  notifyOnNewProducts: boolean;
-  notifyOnRepayments: boolean;
-};
 
 export type UserResponse = UserResponseData;
