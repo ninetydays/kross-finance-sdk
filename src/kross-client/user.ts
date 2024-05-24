@@ -7,15 +7,12 @@ import {
   UserWengeQueryDto,
   UserUpdateDto,
   UserUpdateResponse,
-  PortfolioResponse,
 } from '../types/kross-client/user';
 
 export class User extends KrossClientBase {
   accountData: FunctionRegistered<AccountResponse, UserQueryDto>;
   userData: FunctionRegistered<UserResponse, UserWengeQueryDto>;
   userDataUpdate: FunctionRegistered<UserUpdateResponse, UserUpdateDto>;
-
-  portfolio: FunctionRegistered<PortfolioResponse>;
 
   constructor(options: KrossClientOptions) {
     super(options);
@@ -36,11 +33,6 @@ export class User extends KrossClientBase {
     >({
       url: '/users',
       method: 'put',
-    });
-
-    this.portfolio = User.registerFunction<PortfolioResponse>({
-      url: '/users/portfolio',
-      method: 'get',
     });
   }
 }

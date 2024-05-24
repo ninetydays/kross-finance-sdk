@@ -148,9 +148,3 @@ export type UserUpdateResponse = {
 };
 
 export type UserResponse = UserResponseData;
-
-export type PortfolioResponse = {
-  totalAssetsAmount: number;
-  totalTodayRepayment: number;
-  totalTodayExpectAmount: number;
-};
