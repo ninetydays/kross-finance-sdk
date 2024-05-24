@@ -1,6 +1,6 @@
 {
   "name": "kross-finance-sdk",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.0",
   "description": "Kross Finance SDK for login, sigup and loans",
   "main": "dist/index.js",
   "browser": "dist/index.web.js",
