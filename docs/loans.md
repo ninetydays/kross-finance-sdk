@@ -1,5 +1,5 @@
 Loans class
-The `Loans` class is a client for interacting with the Kross API's loans-related endpoints. It extends the `KrossClientBase class` and provides methods for checking loans information.
+The `KrossClient` class is a client for interacting with the Kross API's loans-related endpoints. It extends the `KrossClientBase class` and provides methods for checking loans information.
 
 ### Table of Contents
 
@@ -14,12 +14,12 @@ The `Loans` class is a client for interacting with the Kross API's loans-related
 
 ---
 
-The `Loans` class constructor accepts a KrossClientOptions object as its only argument. This object is used to configure the underlying Axios instance that makes the HTTP requests to the Kross API.
+The `KrossClient` class constructor accepts a KrossClientOptions object as its only argument. This object is used to configure the underlying Axios instance that makes the HTTP requests to the Kross API.
 
 ```ts
-import { Loans } from 'kross-sdk';
+import { KrossClient } from 'kross-sdk';
 
-const loans = new Loans({
+const loans = new KrossClient({
   baseURL: 'https://api.kross.com',
   accessId: 'afsdfsdfjsdfsd',
   secretKey: 'sdfsdfsdfsdfsdf',

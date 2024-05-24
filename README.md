@@ -36,7 +36,6 @@ KrossClient, Account, Loans, Investments, Inquiry, User, Verifications, GeneralI
 
 ##### [KrossClient](docs/client.md) : It is a base client through which you will be able to make requests any of the data providing APIs via axios instance.
 
-
 ##### [Investments](docs/investment.md) : Contains functions and hooks through which you can make requests for investments related data
 
 ##### [User](docs/user.md) : Contains functions and hooks through which you can make requests for users related data
@@ -50,16 +49,7 @@ KrossClient, Account, Loans, Investments, Inquiry, User, Verifications, GeneralI
 ```js
 import { storage } from 'utils/storage';
 import { envVariables } from './../constants/envVariables';
-import {
-  KrossClient,
-  Loans,
-  Investments,
-  User,
-  Account,
-  Inquiry,
-  GeneralInfo,
-  SignContract,
-} from 'kross-sdk';
+import { KrossClient } from 'kross-sdk';
 
 export const useClients = () => {
   const authToken = storage.getString('authToken');
@@ -79,9 +69,6 @@ export const useClients = () => {
   };
   const clients = {
     krossClient: new KrossClient(clientOptions),
-    LoansClient: new Loans(clientOptions),
-    InvestmentsClient: new Investments(clientOptions),
-    UserClient: new User(clientOptions),
   };
 
   return clients;

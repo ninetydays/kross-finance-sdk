@@ -1,5 +1,5 @@
 User class
-The `User` class is a client for interacting with the Kross API's user-related endpoints. It extends the `KrossClientBase class` and provides methods for checking user information, user register/unregister and user virtual account information.
+The `KrossClient` class is a client for interacting with the Kross API's user-related endpoints. It extends the `KrossClientBase class` and provides methods for checking user information, user register/unregister and user virtual account information.
 
 ### Table of Contents
 
@@ -15,12 +15,12 @@ The `User` class is a client for interacting with the Kross API's user-related e
 
 ---
 
-The `User` class constructor accepts a KrossClientOptions object as its only argument. This object is used to configure the underlying Axios instance that makes the HTTP requests to the Kross API.
+The `KrossClient` class constructor accepts a KrossClientOptions object as its only argument. This object is used to configure the underlying Axios instance that makes the HTTP requests to the Kross API.
 
 ```ts
-import { User } from 'kross-sdk';
+import { KrossClient } from 'kross-sdk';
 
-const user = new User({
+const user = new KrossClient({
   baseURL: 'https://api.kross.com',
   accessId: 'afsdfsdfjsdfsd',
   secretKey: 'sdfsdfsdfsdfsdf',
