@@ -27,6 +27,17 @@ describe('Kross Finance SDK', () => {
 
       expect(loginResponse.status).toBe(201);
     });
+
+    it('refresh authToken will return 401 as by default tokens are created for 15 minutes validity', async () => {
+      let refreshTokenResponse;
+      try {
+        refreshTokenResponse = await client.updateAuthToken();
+      } catch (e) {
+        refreshTokenResponse = e;
+      }
+
+      expect(refreshTokenResponse.response.status).toBe(401);
+    });
   });
 
   describe('User Specific Endpoints Tests ', () => {
