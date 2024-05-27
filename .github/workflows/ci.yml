@@ -19,12 +19,6 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@ninetydays'
           always-auth: true
-      - name: Decrypt secret to create .env.$env file
-        run: ./secret.sh dev decrypt
-        env:
-          SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE }}
-      - name: Rename .env.$env to .env
-        run: mv .env.dev .env
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
@@ -44,6 +38,12 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - name: Decrypt secret to create .env.$env file
+        run: ./secret.sh dev decrypt
+        env:
+          SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE }}
+      - name: Rename .env.$env to .env
+        run: mv .env.dev .env
       - uses: actions/checkout@v3
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
